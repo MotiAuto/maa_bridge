@@ -40,7 +40,7 @@ namespace wpc_app_bridge
     void WpcAppBridge::target_callback(const geometry_msgs::msg::Point::SharedPtr msg)
     {
         tf2::Quaternion q;
-        q.setEuler(0.0, 0.0, msg->z);
+        q.setEuler(0.0, 0.0, msg->z*(M_PI / 180.0));
 
         geometry_msgs::msg::PoseStamped pose;
         pose.pose.position.x = msg->x;
